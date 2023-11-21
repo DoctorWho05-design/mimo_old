@@ -1,0 +1,14 @@
+{
+  "name": "mimo",
+  "version": "1.0.0",
+  "description": "mimos heart",
+  "main": "index.js",
+  "scripts": {
+    "test": "dev"
+  },
+  "keywords": [
+    "mimo"
+  ],
+  "author": "Niklas Bücker",
+  "license": "ISC"
+}
