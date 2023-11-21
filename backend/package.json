@@ -4,7 +4,7 @@
   "description": "mimos heart",
   "main": "index.js",
   "scripts": {
-    "test": "dev"
+    "dev": "node index.js"
   },
   "keywords": [
     "mimo"
