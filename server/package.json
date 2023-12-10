@@ -3,12 +3,17 @@
   "version": "1.0.0",
   "description": "mimos heart",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "dev": "node index.js"
+    "dev": "node index.js",
+    "build": "tsc"
   },
   "keywords": [
     "mimo"
   ],
   "author": "Niklas Bücker",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
 }
