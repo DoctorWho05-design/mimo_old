@@ -16,4 +16,9 @@ public class ControllerDebug {
         //! Start Debug Mode
         mDebugFrame.setVisible(true);
     }
+
+    public void startMethod(String mMethodName) {
+        if (!mDebugMode) return;
+        System.out.println("Start Method: "+ mMethodName);
+    }
 }

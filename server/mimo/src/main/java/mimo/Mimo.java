@@ -5,15 +5,14 @@ import mimo.Controller.Controller;
 
 public class Mimo {
     private Controller mController;
-    private ControllerDebug mControllerDebug;
+    public static final ControllerDebug DEBUGER = new ControllerDebug(true);
 
     public Mimo() {
         initMimo();
     }
 
     private void initMimo() {
-        mController = new Controller();
-        mControllerDebug = new ControllerDebug(false);
+        mController = new Controller(); 
     }
 
     //! Main Method

@@ -1,19 +1,22 @@
 package mimo.Controller.PluginManager;
 
-import java.util.HashSet;
-import java.util.Set;
+import plugins.Spotify.Spotify;
 
 public class PluginManager {
-    private Set<Plugin> mPluginsSet;
+    private PluginSet mPluginsSet;
 
     public PluginManager() {
         initPluginManager();
+        registerPlugins();
     }
 
     private void initPluginManager() {
-        mPluginsSet = new HashSet<>();
+        mPluginsSet = new PluginSet();
     }
 
+    private void registerPlugins() {
+        mPluginsSet.add(new Spotify());
+    }
 
-    public Set<Plugin> getPluginSet() {return mPluginsSet;}
+    public PluginSet getPluginSet() {return mPluginsSet;}
 }
