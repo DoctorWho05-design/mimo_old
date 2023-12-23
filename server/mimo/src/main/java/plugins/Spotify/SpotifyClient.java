@@ -3,6 +3,7 @@ package plugins.Spotify;
 import java.net.URI;
 import java.net.URISyntaxException;
 
+import mimo.Mimo;
 import se.michaelthelin.spotify.SpotifyApi;
 
 public class SpotifyClient {
@@ -16,12 +17,14 @@ public class SpotifyClient {
     private void initSpotifyClient() {
         try {
             mSpotifyApi = new SpotifyApi.Builder()
-                .setClientId("<your_client_id>")
-                .setClientSecret("<your_client_secret>")
+                .setClientId("aecf8f8115d74d95bb05b8e89294efa4")
+                .setClientSecret("bad8070a9f42475c82c342bf7c2259cd")
                 .setRedirectUri(new URI("http://localhost:3001"))
                 .build();
         } catch (URISyntaxException e) {
-            //System.out.println("Error in Spotify Plugin: " + e);
+            e.printStackTrace();
         }
+        Mimo.DEBUGER.startMethod("initSpotifyClient()");
+        System.out.println(mSpotifyApi.getAccessToken());
     }
 }
