@@ -4,6 +4,7 @@ import mimo.Mimo;
 import mimo.Controller.PluginManager.Plugin;
 
 public class Spotify extends Plugin{
+    private SpotifyClient mSpotifyClient;
     
     public Spotify() {
         super("Spotify");
@@ -12,6 +13,7 @@ public class Spotify extends Plugin{
     @Override
     public void start() {
         Mimo.DEBUGER.startMethod("Spotify start()");
+        mSpotifyClient = new SpotifyClient();
     }
 
     @Override
