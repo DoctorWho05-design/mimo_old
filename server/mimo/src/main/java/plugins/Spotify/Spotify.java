@@ -1,5 +1,7 @@
 package plugins.Spotify;
 
-public class Spotify {
+import mimo.Controller.PluginManager.Plugin;
+
+public class Spotify extends Plugin{
     
 }
