@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Set;
-
 import mimo.Controller.PluginManager.Plugin;
 import mimo.Controller.PluginManager.PluginManager;
 import plugins.Spotify.Spotify;
@@ -19,7 +18,6 @@ public class Controller {
     public Controller() {
         initPlugins();
         registerPlugins();
-
         runMimo();
     }
 

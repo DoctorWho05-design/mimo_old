@@ -15,5 +15,5 @@ public class PluginManager {
     }
 
 
-    public Set getPluginSet() {return mPluginsSet;}
+    public Set<Plugin> getPluginSet() {return mPluginsSet;}
 }
