@@ -1,5 +1,9 @@
 package mimo;
 
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+
 import debug.ControllerDebug;
 import mimo.Controller.Controller;
 
@@ -13,7 +17,7 @@ public class Mimo {
 
     private void initMimo() {
         mController = new Controller();
-        mControllerDebug = new ControllerDebug(true);
+        mControllerDebug = new ControllerDebug(false);
     }
 
 

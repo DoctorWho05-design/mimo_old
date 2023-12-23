@@ -11,5 +11,9 @@ public class ControllerDebug {
     private void initControllerDebug(boolean mDebugMode) {
         this.mDebugMode = mDebugMode;
         mDebugFrame = new DebugFrame();
+
+        if (!mDebugMode) return;
+        //! Start Debug Mode
+        mDebugFrame.setVisible(true);
     }
 }

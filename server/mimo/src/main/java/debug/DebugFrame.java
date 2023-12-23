@@ -16,8 +16,6 @@ public class DebugFrame extends JFrame{
         mFrameSize = new Dimension(600, 400);
 
         this.add(mPluginTestPanel);
-        this.setVisible(true);
         this.setSize(mFrameSize);
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 }
