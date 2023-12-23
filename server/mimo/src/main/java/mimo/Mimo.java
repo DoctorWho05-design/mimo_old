@@ -4,6 +4,7 @@ import debug.ControllerDebug;
 import mimo.Controller.Controller;
 
 public class Mimo {
+    
     private Controller mController;
     public static final ControllerDebug DEBUGER = new ControllerDebug(true);
 
@@ -11,6 +12,7 @@ public class Mimo {
         initMimo();
     }
 
+    //* initMethod (Only run once)
     private void initMimo() {
         mController = new Controller(); 
     }

@@ -6,7 +6,6 @@ import java.net.Socket;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-
 import mimo.Mimo;
 import mimo.Controller.PluginManager.PluginManager;
 import mimo.Controller.PluginManager.PluginSet;
@@ -38,7 +37,7 @@ public class Controller {
 
                 while (true) {
                     Socket clientSocket = mServerSocket.accept();
-                    handleMimo();
+                    handleMimo(clientSocket);
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -48,9 +47,8 @@ public class Controller {
         Mimo.DEBUGER.startMethod("serverThread.start()");
     }
 
-    private void handleMimo() {
+    private void handleMimo(Socket clientSocket) {
         Mimo.DEBUGER.startMethod("handleMimo()");
-        
     }
 
     private void runTask() {
