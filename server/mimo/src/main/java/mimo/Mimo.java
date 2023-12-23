@@ -1,9 +1,11 @@
 package mimo;
 
+import debug.ControllerDebug;
 import mimo.Controller.Controller;
 
 public class Mimo {
     private Controller mController;
+    private ControllerDebug mControllerDebug;
 
     public Mimo() {
         initMimo();
@@ -11,6 +13,7 @@ public class Mimo {
 
     private void initMimo() {
         mController = new Controller();
+        mControllerDebug = new ControllerDebug(true);
     }
 
 
