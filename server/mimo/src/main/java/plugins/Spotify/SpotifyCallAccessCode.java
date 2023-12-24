@@ -13,7 +13,7 @@ import se.michaelthelin.spotify.model_objects.credentials.AuthorizationCodeCrede
 import se.michaelthelin.spotify.requests.authorization.authorization_code.AuthorizationCodeRefreshRequest;
 import org.apache.hc.core5.http.ParseException;
 
-class SpotifyClient {
+class SpotifyCallAccessCode {
     private SpotifyApi mSpotifyApi;
     
     private Spotify mSpotify;
@@ -24,7 +24,7 @@ class SpotifyClient {
     private AuthorizationCodeRefreshRequest mAuthorizationCodeRefreshRequest;
     private AuthorizationCodeCredentials mAuthorizationCodeCredentials;
 
-    public SpotifyClient(Spotify mSpotify) {
+    public SpotifyCallAccessCode(Spotify mSpotify) {
         initSpotifyClient(mSpotify);
     }
 
@@ -56,20 +56,24 @@ class SpotifyClient {
     }
 
     public void authorizationCodeRefresh() {
-    try {
-        mAuthorizationCodeCredentials  = mAuthorizationCodeRefreshRequest.execute();
-        mSpotifyApi.setAccessToken(mAuthorizationCodeCredentials.getAccessToken());
-        System.out.println("Expires in: " + mAuthorizationCodeCredentials.getExpiresIn());
+        try {
+            mAuthorizationCodeCredentials  = mAuthorizationCodeRefreshRequest.execute();
+            mSpotifyApi.setAccessToken(mAuthorizationCodeCredentials.getAccessToken());
+            //System.out.println("Expires in: " + mAuthorizationCodeCredentials.getExpiresIn());
 
-    } catch (IOException | SpotifyWebApiException | ParseException e) {
-        System.out.println("Error: " + e.getMessage());
+        } catch (IOException | SpotifyWebApiException | ParseException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
     }
-  }
 
-  public void printAuthorizationCodeExpiresIn() {
-    System.out.println("Expires in: " + mAuthorizationCodeCredentials.getExpiresIn());
-  }
+    public void printAuthorizationCodeExpiresIn() {
+        System.out.println("Expires in: " + mAuthorizationCodeCredentials.getExpiresIn());
+    }
 
-  public String getAccessToken() {return mSpotifyApi.getAccessToken();}
-  public String getRefreshToken() {return mSpotifyApi.getRefreshToken();}
+    public String getAccessToken() {
+        authorizationCodeRefresh();
+        return mSpotifyApi.getAccessToken();
+    }
+
+    public String getRefreshToken() {return mSpotifyApi.getRefreshToken();}
 }

@@ -11,7 +11,7 @@ import se.michaelthelin.spotify.requests.authorization.authorization_code.Author
 import se.michaelthelin.spotify.requests.authorization.authorization_code.AuthorizationCodeUriRequest;
 import org.apache.hc.core5.http.ParseException;
 
-class SpotifyCallToken {
+class SpotifyCallSpotifyCode {
     private SpotifyApi mSpotifyApi;
     private AuthorizationCodeUriRequest mAuthorizationCodeUriRequest;
     private String mRefreshToken;
@@ -20,11 +20,11 @@ class SpotifyCallToken {
     private AuthorizationCodeRequest mAuthorizationCodeRequest;
     private AuthorizationCodeCredentials mAuthorizationCodeCredentials;
     
-    public SpotifyCallToken(SpotifyApi mSpotifyApi) {
-        initSpotifyCallRefreshToken(mSpotifyApi);
+    public SpotifyCallSpotifyCode(SpotifyApi mSpotifyApi) {
+        initSpotifyCallSpotifyCode(mSpotifyApi);
     }
 
-    private void initSpotifyCallRefreshToken(SpotifyApi mSpotifyApi) {
+    private void initSpotifyCallSpotifyCode(SpotifyApi mSpotifyApi) {
         this.mSpotifyApi = mSpotifyApi;
     }
 
@@ -53,5 +53,7 @@ class SpotifyCallToken {
     }
     public String getRefreshToken() {return mRefreshToken;}
 
-    public String getAccessToken() {return mAccessToken;}
+    public String getAccessToken() {
+        return mAccessToken;
+    }
 }

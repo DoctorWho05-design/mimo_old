@@ -4,7 +4,7 @@ import mimo.Mimo;
 import mimo.Controller.PluginManager.Plugin;
 
 public class Spotify extends Plugin{
-    private SpotifyClient mSpotifyClient;
+    private SpotifyCallAccessCode mSpotifyCallAccessCode;
     
     public Spotify() {
         super("Spotify");
@@ -13,14 +13,13 @@ public class Spotify extends Plugin{
     @Override
     public void start() {
         Mimo.DEBUGER.startMethod(getPluginName() + " start()");
-        mSpotifyClient = new SpotifyClient(this);
+        mSpotifyCallAccessCode = new SpotifyCallAccessCode(this);
     }
 
     @Override
     public void run() {
         Mimo.DEBUGER.startMethod(getPluginName() + " run()");
-        Mimo.DEBUGER.printToken(getPluginName() ,"Access", mSpotifyClient.getAccessToken());
-        Mimo.DEBUGER.printToken(getPluginName(),"Refresh", mSpotifyClient.getRefreshToken());
-        mSpotifyClient.printAuthorizationCodeExpiresIn();
+        Mimo.DEBUGER.printToken(getPluginName() ,"Access", mSpotifyCallAccessCode.getAccessToken());
+        Mimo.DEBUGER.printToken(getPluginName(),"Refresh", mSpotifyCallAccessCode.getRefreshToken());
     }
 }
