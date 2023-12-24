@@ -14,4 +14,6 @@ public abstract class Plugin {
     public abstract void start();
     
     public abstract void run();
+
+    public String getPluginName() {return mPluginName;}
 }

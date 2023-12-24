@@ -1,26 +1,23 @@
-package plugins.Spotify;
+package plugins.Satisfactory;
 
 import mimo.Mimo;
 import mimo.Controller.PluginManager.Plugin;
 
-public class Spotify extends Plugin{
-    private SpotifyClient mSpotifyClient;
+public class Satisfactory extends Plugin{
+
     
-    public Spotify() {
-        super("Spotify");
+    public Satisfactory() {
+        super("Satisfactory");
     }
 
     @Override
     public void start() {
         Mimo.DEBUGER.startMethod(getPluginName() + " start()");
-        mSpotifyClient = new SpotifyClient();
     }
 
     @Override
     public void run() {
         Mimo.DEBUGER.startMethod(getPluginName() + " run()");
-        mSpotifyClient.printAccsesToken();
     }
-
     
 }

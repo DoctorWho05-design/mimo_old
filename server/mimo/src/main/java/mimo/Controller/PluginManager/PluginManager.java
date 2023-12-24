@@ -1,5 +1,7 @@
 package mimo.Controller.PluginManager;
 
+import plugins.GenshinImpact.GenshinImpact;
+import plugins.Satisfactory.Satisfactory;
 import plugins.Spotify.Spotify;
 
 public class PluginManager {
@@ -16,6 +18,8 @@ public class PluginManager {
 
     private void registerPlugins() {
         mPluginsSet.add(new Spotify());
+        mPluginsSet.add(new Satisfactory());
+        mPluginsSet.add(new GenshinImpact());
     }
 
     public void startPlugins() {
