@@ -20,6 +20,4 @@ public class Spotify extends Plugin{
     public void run() {
         Mimo.DEBUGER.startMethod(getPluginName() + " run()");
     }
-
-    
 }
