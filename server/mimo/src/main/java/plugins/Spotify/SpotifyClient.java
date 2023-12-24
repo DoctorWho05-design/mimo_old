@@ -1,12 +1,17 @@
 package plugins.Spotify;
 
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
 import java.util.Properties;
 import mimo.Mimo;
 import se.michaelthelin.spotify.SpotifyApi;
 import se.michaelthelin.spotify.SpotifyHttpManager;
+import se.michaelthelin.spotify.exceptions.SpotifyWebApiException;
+import se.michaelthelin.spotify.model_objects.credentials.AuthorizationCodeCredentials;
+import se.michaelthelin.spotify.requests.authorization.authorization_code.AuthorizationCodeRefreshRequest;
+import org.apache.hc.core5.http.ParseException;
 
 class SpotifyClient {
     private SpotifyApi mSpotifyApi;
@@ -15,8 +20,10 @@ class SpotifyClient {
     private URI mRedirectedURI;
     private Properties mProperties;
     private InputStream mInput; 
-    private SpotifyCallToken mCallToken;
-    
+    private String mRefreshToken = "AQCBS7s3l0tgjhUW3PJ19u7lNYjUPTfJfuarTAInEBF7IRdhKIBn3hrSpWLvUSGikYR3nO0xxKpdpXZk67pIoDidxJkcpL7zdGE_f6CfsOj9K3syNjzWLzLxxsHs8sKtvW8";
+    private AuthorizationCodeRefreshRequest mAuthorizationCodeRefreshRequest;
+    private AuthorizationCodeCredentials mAuthorizationCodeCredentials;
+
     public SpotifyClient(Spotify mSpotify) {
         initSpotifyClient(mSpotify);
     }
@@ -38,17 +45,31 @@ class SpotifyClient {
                 .setClientId(mProperties.getProperty("clientID"))
                 .setClientSecret(mProperties.getProperty("clientSecret"))
                 .setRedirectUri(mRedirectedURI)
+                .setRefreshToken(mRefreshToken)
                 .build();
         
-        mCallToken = new SpotifyCallToken(mSpotifyApi);
-        
-        mCallToken.callRefreshToken();
-
-        mSpotifyApi.setRefreshToken(mCallToken.getRefreshToken());
-        mSpotifyApi.setAccessToken(mCallToken.getAccessToken());
+        mAuthorizationCodeRefreshRequest = mSpotifyApi.authorizationCodeRefresh().build();
+        authorizationCodeRefresh();
         Mimo.DEBUGER.startMethod("initSpotifyClient()");
         Mimo.DEBUGER.printToken(mSpotify.getPluginName() ,"Access", mSpotifyApi.getAccessToken());
         Mimo.DEBUGER.printToken(mSpotify.getPluginName(),"Refresh", mSpotifyApi.getRefreshToken());
     }
-   
+
+    public void authorizationCodeRefresh() {
+    try {
+        mAuthorizationCodeCredentials  = mAuthorizationCodeRefreshRequest.execute();
+        mSpotifyApi.setAccessToken(mAuthorizationCodeCredentials.getAccessToken());
+        System.out.println("Expires in: " + mAuthorizationCodeCredentials.getExpiresIn());
+
+    } catch (IOException | SpotifyWebApiException | ParseException e) {
+        System.out.println("Error: " + e.getMessage());
+    }
+  }
+
+  public void printAuthorizationCodeExpiresIn() {
+    System.out.println("Expires in: " + mAuthorizationCodeCredentials.getExpiresIn());
+  }
+
+  public String getAccessToken() {return mSpotifyApi.getAccessToken();}
+  public String getRefreshToken() {return mSpotifyApi.getRefreshToken();}
 }

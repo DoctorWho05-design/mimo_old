@@ -19,5 +19,8 @@ public class Spotify extends Plugin{
     @Override
     public void run() {
         Mimo.DEBUGER.startMethod(getPluginName() + " run()");
+        Mimo.DEBUGER.printToken(getPluginName() ,"Access", mSpotifyClient.getAccessToken());
+        Mimo.DEBUGER.printToken(getPluginName(),"Refresh", mSpotifyClient.getRefreshToken());
+        mSpotifyClient.printAuthorizationCodeExpiresIn();
     }
 }
