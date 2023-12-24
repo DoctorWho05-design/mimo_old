@@ -21,4 +21,9 @@ public class ControllerDebug {
         if (!mDebugMode) return;
         System.out.println("Start Method: "+ mMethodName);
     }
+
+    public void printToken(String mPluginName, String mTokenName, String mToken) {
+        if (!mDebugMode) return;
+        System.out.println(mPluginName + " " +mTokenName + "Token: " + mToken);
+    }
 }

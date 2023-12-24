@@ -13,13 +13,12 @@ public class Spotify extends Plugin{
     @Override
     public void start() {
         Mimo.DEBUGER.startMethod(getPluginName() + " start()");
-        mSpotifyClient = new SpotifyClient();
+        mSpotifyClient = new SpotifyClient(this);
     }
 
     @Override
     public void run() {
         Mimo.DEBUGER.startMethod(getPluginName() + " run()");
-        mSpotifyClient.printAccsesToken();
     }
 
     
