@@ -7,14 +7,15 @@ import se.michaelthelin.spotify.model_objects.credentials.AuthorizationCodeCrede
 import se.michaelthelin.spotify.requests.authorization.authorization_code.AuthorizationCodeRequest;
 import se.michaelthelin.spotify.requests.authorization.authorization_code.AuthorizationCodeUriRequest;
 
-class SpotifyCallRefreshToken {
+class SpotifyCallToken {
     private SpotifyApi mSpotifyApi;
     private AuthorizationCodeUriRequest mAuthorizationCodeUriRequest;
     private String mRefreshToken;
+    private String mAccessToken;
     private AuthorizationCodeRequest mAuthorizationCodeRequest;
     private AuthorizationCodeCredentials mAuthorizationCodeCredentials;
     
-    public SpotifyCallRefreshToken(SpotifyApi mSpotifyApi) {
+    public SpotifyCallToken(SpotifyApi mSpotifyApi) {
         initSpotifyCallRefreshToken(mSpotifyApi);
     }
 
@@ -34,6 +35,7 @@ class SpotifyCallRefreshToken {
             mAuthorizationCodeCredentials = mAuthorizationCodeRequest.execute();
 
             mRefreshToken = mAuthorizationCodeCredentials.getRefreshToken();
+            mAccessToken = mAuthorizationCodeCredentials.getAccessToken();
             
         } catch (Exception e) {
             e.printStackTrace();
@@ -41,4 +43,6 @@ class SpotifyCallRefreshToken {
     }
 
     public String getRefreshToken() {return mRefreshToken;}
+
+    public String getAccessToken() {return mAccessToken;}
 }

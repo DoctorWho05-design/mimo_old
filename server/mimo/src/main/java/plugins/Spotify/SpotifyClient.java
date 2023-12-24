@@ -15,7 +15,7 @@ class SpotifyClient {
     private URI mRedirectedURI;
     private Properties mProperties;
     private InputStream mInput; 
-    private SpotifyCallRefreshToken mCallRefreshToken;
+    private SpotifyCallToken mCallToken;
     
     public SpotifyClient(Spotify mSpotify) {
         initSpotifyClient(mSpotify);
@@ -40,11 +40,12 @@ class SpotifyClient {
                 .setRedirectUri(mRedirectedURI)
                 .build();
         
-        mCallRefreshToken = new SpotifyCallRefreshToken(mSpotifyApi);
+        mCallToken = new SpotifyCallToken(mSpotifyApi);
         
-        mCallRefreshToken.callRefreshToken();
+        mCallToken.callRefreshToken();
 
-        mSpotifyApi.setRefreshToken(mCallRefreshToken.getRefreshToken());
+        mSpotifyApi.setRefreshToken(mCallToken.getRefreshToken());
+        mSpotifyApi.setAccessToken(mCallToken.getAccessToken());
         Mimo.DEBUGER.startMethod("initSpotifyClient()");
         Mimo.DEBUGER.printToken(mSpotify.getPluginName() ,"Access", mSpotifyApi.getAccessToken());
         Mimo.DEBUGER.printToken(mSpotify.getPluginName(),"Refresh", mSpotifyApi.getRefreshToken());
