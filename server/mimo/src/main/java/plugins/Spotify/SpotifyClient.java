@@ -27,6 +27,7 @@ class SpotifyClient {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        
         Mimo.DEBUGER.startMethod("initSpotifyClient()");
         
         System.out.println("Access Token: " + mSpotifyApi.getAccessToken());
