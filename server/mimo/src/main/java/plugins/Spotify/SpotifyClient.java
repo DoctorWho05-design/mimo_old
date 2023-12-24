@@ -6,7 +6,7 @@ import mimo.Mimo;
 import se.michaelthelin.spotify.SpotifyApi;
 import se.michaelthelin.spotify.SpotifyHttpManager;
 
-public class SpotifyClient {
+class SpotifyClient {
     private SpotifyApi mSpotifyApi;
     
 
@@ -29,6 +29,10 @@ public class SpotifyClient {
         }
         Mimo.DEBUGER.startMethod("initSpotifyClient()");
         
+        System.out.println("Access Token: " + mSpotifyApi.getAccessToken());
+    }
+
+    public void printAccsesToken() {
         System.out.println("Access Token: " + mSpotifyApi.getAccessToken());
     }
         

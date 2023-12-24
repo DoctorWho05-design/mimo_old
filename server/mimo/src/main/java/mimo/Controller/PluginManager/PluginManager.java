@@ -18,5 +18,11 @@ public class PluginManager {
         mPluginsSet.add(new Spotify());
     }
 
-    public PluginSet getPluginSet() {return mPluginsSet;}
+    public void startPlugins() {
+        mPluginsSet.startPlugins();
+    }
+
+    public void runPlugins() {
+        mPluginsSet.runPlugins();
+    }
 }
