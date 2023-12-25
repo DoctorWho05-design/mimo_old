@@ -1,5 +1,8 @@
 package mimo.Controller.PluginManager;
 
+import plugins.GenshinImpact.GenshinImpact;
+import plugins.NexusChronicals.NexusChronicals;
+import plugins.Satisfactory.Satisfactory;
 import plugins.Spotify.Spotify;
 
 public class PluginManager {
@@ -16,7 +19,16 @@ public class PluginManager {
 
     private void registerPlugins() {
         mPluginsSet.add(new Spotify());
+        mPluginsSet.add(new Satisfactory());
+        mPluginsSet.add(new GenshinImpact());
+        mPluginsSet.add(new NexusChronicals());
     }
 
-    public PluginSet getPluginSet() {return mPluginsSet;}
+    public void startPlugins() {
+        mPluginsSet.startPlugins();
+    }
+
+    public void runPlugins() {
+        mPluginsSet.runPlugins();
+    }
 }
