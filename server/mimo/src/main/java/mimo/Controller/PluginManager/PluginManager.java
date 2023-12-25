@@ -7,7 +7,7 @@ import plugins.Satisfactory.Satisfactory;
 import plugins.Spotify.Spotify;
 
 public class PluginManager {
-    private PluginSet mPluginsSet;
+    private PluginMap mPluginsSet;
 
     public PluginManager() {
         initPluginManager();
@@ -15,7 +15,7 @@ public class PluginManager {
     }
 
     private void initPluginManager() {
-        mPluginsSet = new PluginSet();
+        mPluginsSet = new PluginMap();
     }
 
     private void registerPlugins() {
