@@ -3,7 +3,7 @@ package mimo.Controller.PluginManager;
 import java.util.HashSet;
 import mimo.Mimo;
 
-class PluginMap extends HashSet<Plugin>{
+class PluginSet extends HashSet<Plugin>{
 
     public void startPlugins() {
         Mimo.DEBUGER.startMethod("startPlugin()");

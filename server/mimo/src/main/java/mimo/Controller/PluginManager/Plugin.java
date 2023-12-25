@@ -2,7 +2,7 @@ package mimo.Controller.PluginManager;
 
 public abstract class Plugin {
     private String mPluginName;
-    protected PluginMap mPluginSet;
+    protected PluginSet mPluginSet;
 
     public Plugin(String mPluginName) {
         initPlugin(mPluginName);
@@ -18,5 +18,5 @@ public abstract class Plugin {
 
     public String getPluginName() {return mPluginName;}
 
-    public void setPluginSet(PluginMap mPluginSet) {this.mPluginSet = mPluginSet;}
+    public void setPluginSet(PluginSet mPluginSet) {this.mPluginSet = mPluginSet;}
 }
