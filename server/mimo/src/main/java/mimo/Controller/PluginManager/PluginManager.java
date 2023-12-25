@@ -1,5 +1,6 @@
 package mimo.Controller.PluginManager;
 
+import plugins.Discord.Discord;
 import plugins.GenshinImpact.GenshinImpact;
 import plugins.NexusChronicals.NexusChronicals;
 import plugins.Satisfactory.Satisfactory;
@@ -22,6 +23,7 @@ public class PluginManager {
         mPluginsSet.add(new Satisfactory());
         mPluginsSet.add(new GenshinImpact());
         mPluginsSet.add(new NexusChronicals());
+        mPluginsSet.add(new Discord());
     }
 
     public void startPlugins() {
