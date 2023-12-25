@@ -36,6 +36,7 @@ class SpotifyFirstAccessCallRegisterCode {
             Scanner mScanner = new Scanner(System.in);
             System.out.println("Enter Spotify Access Code:");
             mCode = mScanner.nextLine();
+            mScanner.close();
 
             mAuthorizationCodeRequest = mSpotifyApi.authorizationCode(mCode).build();
             mAuthorizationCodeCredentials = mAuthorizationCodeRequest.execute();

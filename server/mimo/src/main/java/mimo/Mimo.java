@@ -6,7 +6,7 @@ import mimo.Controller.Controller;
 public class Mimo {
     
     private Controller mController;
-    public static final ControllerDebug DEBUGER = new ControllerDebug(true);
+    public static final ControllerDebug DEBUGER = new ControllerDebug(false);
 
     public Mimo() {
         initMimo();
