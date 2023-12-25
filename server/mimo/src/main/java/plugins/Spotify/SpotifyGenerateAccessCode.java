@@ -13,18 +13,18 @@ import se.michaelthelin.spotify.model_objects.credentials.AuthorizationCodeCrede
 import se.michaelthelin.spotify.requests.authorization.authorization_code.AuthorizationCodeRefreshRequest;
 import org.apache.hc.core5.http.ParseException;
 
-class SpotifyCallAccessCode {
+class SpotifyGenerateAccessCode {
     private SpotifyApi mSpotifyApi;
-    
     private Spotify mSpotify;
     private URI mRedirectedURI;
     private Properties mProperties;
     private InputStream mInput; 
-    private String mRefreshToken = "AQCBS7s3l0tgjhUW3PJ19u7lNYjUPTfJfuarTAInEBF7IRdhKIBn3hrSpWLvUSGikYR3nO0xxKpdpXZk67pIoDidxJkcpL7zdGE_f6CfsOj9K3syNjzWLzLxxsHs8sKtvW8";
+    private String mRefreshToken;
+    private SpotifyFirstAccessCallRegisterCode mSpotifyFirstAccessCallRegisterCode;
     private AuthorizationCodeRefreshRequest mAuthorizationCodeRefreshRequest;
     private AuthorizationCodeCredentials mAuthorizationCodeCredentials;
 
-    public SpotifyCallAccessCode(Spotify mSpotify) {
+    public SpotifyGenerateAccessCode(Spotify mSpotify) {
         initSpotifyClient(mSpotify);
     }
 
@@ -38,6 +38,12 @@ class SpotifyCallAccessCode {
             mProperties.load(mInput);
         } catch (Exception e) {
             e.printStackTrace();
+        }
+        mRefreshToken = mProperties.getProperty("refreshToken");
+        
+        if (mRefreshToken == null) {
+            mSpotifyFirstAccessCallRegisterCode = new SpotifyFirstAccessCallRegisterCode(mSpotifyApi);
+            mRefreshToken = mSpotifyFirstAccessCallRegisterCode.getRefreshToken();
         }
 
         mSpotifyApi = new SpotifyApi
@@ -55,7 +61,7 @@ class SpotifyCallAccessCode {
         Mimo.DEBUGER.printToken(mSpotify.getPluginName(),"Refresh", mSpotifyApi.getRefreshToken());
     }
 
-    public void authorizationCodeRefresh() {
+    private void authorizationCodeRefresh() {
         try {
             mAuthorizationCodeCredentials  = mAuthorizationCodeRefreshRequest.execute();
             mSpotifyApi.setAccessToken(mAuthorizationCodeCredentials.getAccessToken());
