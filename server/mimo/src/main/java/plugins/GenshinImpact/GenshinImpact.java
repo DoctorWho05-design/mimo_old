@@ -1,12 +1,13 @@
 package plugins.GenshinImpact;
 
 import mimo.Mimo;
+import mimo.Controller.Data;
 import mimo.Controller.PluginManager.Plugin;
 
 public class GenshinImpact extends Plugin{
 
     public GenshinImpact() {
-        super("Genshin Impact");
+        super("Genshin Impact", true);
     }
 
     @Override
@@ -18,6 +19,12 @@ public class GenshinImpact extends Plugin{
     @Override
     public void run() {
         Mimo.DEBUGER.startMethod(getPluginName() + " run()");
+    }
+
+    @Override
+    public void run(Data mData) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'run'");
     }
     
 }

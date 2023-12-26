@@ -1,12 +1,13 @@
 package plugins.NexusChronicals;
 
 import mimo.Mimo;
+import mimo.Controller.Data;
 import mimo.Controller.PluginManager.Plugin;
 
 public class NexusChronicals extends Plugin{
 
     public NexusChronicals() {
-        super("NexusChronicals");
+        super("NexusChronicals", false);
     }
 
     @Override
@@ -17,6 +18,12 @@ public class NexusChronicals extends Plugin{
     @Override
     public void run() {
         Mimo.DEBUGER.startMethod(getPluginName() + " run()");
+    }
+
+    @Override
+    public void run(Data mData) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'run'");
     }
     
 }
