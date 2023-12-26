@@ -1,5 +1,7 @@
 package mimo.Controller.WorkspaceManager;
 
-public class WorkspaceMap {
+import java.util.HashMap;
+
+public class WorkspaceMap extends HashMap<String, Workspace>{
     
 }
