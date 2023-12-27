@@ -1,4 +1,4 @@
-package mimo.Controller.PluginManager;
+package mimo.Controller.PluginController;
 
 import plugins.Discord.Discord;
 import plugins.GenshinImpact.GenshinImpact;

@@ -4,7 +4,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import mimo.Mimo;
-import mimo.Controller.PluginManager.PluginManager;
+import mimo.Controller.PluginController.PluginManager;
 
 public class Controller {
     

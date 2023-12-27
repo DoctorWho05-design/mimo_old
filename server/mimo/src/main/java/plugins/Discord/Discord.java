@@ -2,7 +2,7 @@ package plugins.Discord;
 
 import mimo.Mimo;
 import mimo.Controller.Data;
-import mimo.Controller.PluginManager.Plugin;
+import mimo.Controller.PluginController.Plugin;
 
 public class Discord extends Plugin{
 

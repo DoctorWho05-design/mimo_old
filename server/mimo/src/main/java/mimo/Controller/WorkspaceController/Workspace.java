@@ -1,6 +1,6 @@
-package mimo.Controller.WorkspaceManager;
+package mimo.Controller.WorkspaceController;
 
-import mimo.Controller.PluginManager.PluginSet;
+import mimo.Controller.PluginController.PluginSet;
 
 public abstract class Workspace {
     private String mWorkspaceName;
@@ -14,5 +14,6 @@ public abstract class Workspace {
         this.mWorkspaceName = mWorkspaceName;
     }
 
+    public String getName() {return mWorkspaceName;}
     
 }

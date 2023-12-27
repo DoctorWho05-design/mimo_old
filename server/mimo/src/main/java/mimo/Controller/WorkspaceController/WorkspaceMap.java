@@ -1,4 +1,4 @@
-package mimo.Controller.WorkspaceManager;
+package mimo.Controller.WorkspaceController;
 
 import java.util.HashMap;
 

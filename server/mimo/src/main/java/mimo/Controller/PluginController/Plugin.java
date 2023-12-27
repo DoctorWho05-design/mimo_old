@@ -1,4 +1,4 @@
-package mimo.Controller.PluginManager;
+package mimo.Controller.PluginController;
 
 import mimo.Controller.Data;
 
