@@ -1,6 +1,6 @@
 package mimo.Controller.WorkspaceController;
 
-public class WorkspaceManager {
+public class WorkspaceController {
 
     
 }

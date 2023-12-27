@@ -1,10 +1,10 @@
 package mimo.Controller.WorkspaceController;
 
-import mimo.Controller.PluginController.PluginSet;
+import mimo.Controller.PluginController.PluginMap;
 
 public abstract class Workspace {
     private String mWorkspaceName;
-    protected PluginSet mPluginSet;
+    protected PluginMap mPluginMap;
 
     public Workspace(String mWorkspaceName) {
         initWorksapce(mWorkspaceName);
