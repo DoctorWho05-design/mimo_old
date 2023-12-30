@@ -1,13 +1,14 @@
 package plugins.Spotify;
 
 import mimo.Mimo;
-import mimo.Controller.PluginManager.Plugin;
+import mimo.Controller.Data;
+import mimo.Controller.PluginController.Plugin;
 
 public class Spotify extends Plugin{
     private SpotifyGenerateAccessCode mSpotifyGenerateAccessCode;
     
     public Spotify() {
-        super("Spotify");
+        super("Spotify", false);
     }
 
     @Override
@@ -18,6 +19,7 @@ public class Spotify extends Plugin{
 
     @Override
     public void run() {
+        if (!mRunEachIteration) return;
         debbug();
     }
 
@@ -26,5 +28,11 @@ public class Spotify extends Plugin{
         Mimo.DEBUGER.startMethod(getPluginName() + " run()");
         Mimo.DEBUGER.printToken(getPluginName() ,"Access", mSpotifyGenerateAccessCode.getAccessToken());
         Mimo.DEBUGER.printToken(getPluginName(),"Refresh", mSpotifyGenerateAccessCode.getRefreshToken());
+    }
+
+    @Override
+    public void run(Data mData) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'run'");
     }
 }

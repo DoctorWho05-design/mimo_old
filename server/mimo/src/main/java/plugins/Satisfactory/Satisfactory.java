@@ -1,13 +1,14 @@
 package plugins.Satisfactory;
 
 import mimo.Mimo;
-import mimo.Controller.PluginManager.Plugin;
+import mimo.Controller.Data;
+import mimo.Controller.PluginController.Plugin;
 
 public class Satisfactory extends Plugin{
 
     
     public Satisfactory() {
-        super("Satisfactory");
+        super("Satisfactory", false);
     }
 
     @Override
@@ -18,6 +19,12 @@ public class Satisfactory extends Plugin{
     @Override
     public void run() {
         Mimo.DEBUGER.startMethod(getPluginName() + " run()");
+    }
+
+    @Override
+    public void run(Data mData) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'run'");
     }
     
 }
