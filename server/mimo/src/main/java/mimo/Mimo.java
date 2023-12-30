@@ -1,7 +1,7 @@
 package mimo;
 
-import debug.ControllerDebug;
 import mimo.Controller.Controller;
+import debug.ControllerDebug;
 
 public class Mimo {
     
