@@ -1,8 +1,20 @@
 
-export default function App() {
+const App  = () => {
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <Background>
+
+    </Background>
   )
 }
+
+const Background = () => {
+  return (
+    <>
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-purple-700 via-purple-600 to-purple-500">
+        
+      </div>
+    </>
+  )
+}
+
+export default App
