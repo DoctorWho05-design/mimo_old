@@ -17,7 +17,6 @@ public class MimoFrame extends JFrame{
         this.setSize(new Dimension(1400, 700));
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setVisible(true);
-        setStartScreen();
     }
 
     public void setStartScreen() {

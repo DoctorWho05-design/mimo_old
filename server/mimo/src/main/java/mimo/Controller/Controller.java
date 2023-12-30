@@ -24,6 +24,7 @@ public class Controller {
 
     private void initController() {
         mMimoFrame = new MimoFrame();
+        mMimoFrame.setStartScreen();
     }
     private void initPlugins() {
         mPluginController = new PluginContoller();

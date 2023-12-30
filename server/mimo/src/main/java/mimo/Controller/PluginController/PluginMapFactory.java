@@ -15,6 +15,11 @@ public class PluginMapFactory {
         return this;
     }
 
+    public PluginMapFactory editPluginMap(PluginMap mPluginMap) {
+        this.mTempMap = mPluginMap;
+        return this;
+    }
+
     public PluginMapFactory addSpotify() {
         mTempMap.put("Spotify", new Spotify());
         return this;

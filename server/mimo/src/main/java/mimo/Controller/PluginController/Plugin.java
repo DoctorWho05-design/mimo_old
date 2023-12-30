@@ -22,7 +22,5 @@ public abstract class Plugin {
 
     public abstract void run(Data mData);
 
-    public String getPluginName() {return mPluginName;}
-
     public void setPluginSet(PluginMap mPluginMap) {this.mPluginMap = mPluginMap;}
 }
