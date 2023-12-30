@@ -4,6 +4,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+import frontend.MimoFrame;
 import mimo.Mimo;
 import mimo.Controller.PluginController.PluginContoller;
 
@@ -11,14 +12,19 @@ public class Controller {
     
     private PluginContoller mPluginManager;
     private ScheduledExecutorService mScheduler;
+    private MimoFrame mMimoFrame;
 
     public static final int PORT = 3000;
 
     public Controller() {
+        initController();
         initPlugins();
         runMimo();
     }
 
+    private void initController() {
+        mMimoFrame = new MimoFrame();
+    }
     private void initPlugins() {
         mPluginManager = new PluginContoller();
     }
