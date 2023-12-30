@@ -1,4 +1,4 @@
-package mimo.Controller.PluginController;
+package mimo.Controller.Plugin;
 
 import mimo.Controller.Data;
 
@@ -23,4 +23,6 @@ public abstract class Plugin {
     public abstract void run(Data mData);
 
     public void setPluginSet(PluginMap mPluginMap) {this.mPluginMap = mPluginMap;}
+
+    public String getPluginName() {return mPluginName;}
 }

@@ -6,11 +6,13 @@ import java.util.concurrent.TimeUnit;
 
 import frontend.MimoFrame;
 import mimo.Mimo;
-import mimo.Controller.PluginController.PluginContoller;
+import mimo.Controller.Plugin.PluginContoller;
+import mimo.Controller.Workspace.WorkspaceController;
 
 public class Controller {
     
     private PluginContoller mPluginController;
+    private WorkspaceController mWorkspaceController;
     private ScheduledExecutorService mScheduler;
     private MimoFrame mMimoFrame;
 

@@ -1,4 +1,4 @@
-package mimo.Controller.PluginController;
+package mimo.Controller.Plugin;
 
 import java.util.HashMap;
 

@@ -1,7 +1,7 @@
-package mimo.Controller.WorkspaceController;
+package mimo.Controller.Workspace;
 
-import mimo.Controller.PluginController.PluginMap;
-import mimo.Controller.PluginController.PluginMapFactory;
+import mimo.Controller.Plugin.PluginMap;
+import mimo.Controller.Plugin.PluginMapFactory;
 
 public class Workspace {
     private String mWorkspaceName;

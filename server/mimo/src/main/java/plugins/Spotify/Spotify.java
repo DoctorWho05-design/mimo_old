@@ -2,7 +2,7 @@ package plugins.Spotify;
 
 import mimo.Mimo;
 import mimo.Controller.Data;
-import mimo.Controller.PluginController.Plugin;
+import mimo.Controller.Plugin.Plugin;
 
 public class Spotify extends Plugin{
     private SpotifyGenerateAccessCode mSpotifyGenerateAccessCode;

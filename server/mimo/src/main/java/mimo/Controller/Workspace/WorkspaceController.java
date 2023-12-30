@@ -1,4 +1,4 @@
-package mimo.Controller.WorkspaceController;
+package mimo.Controller.Workspace;
 
 public class WorkspaceController {
 
@@ -24,5 +24,5 @@ public class WorkspaceController {
         return mWorkspaceMap.get(mKey);
     }
 
-    
+
 }
