@@ -10,7 +10,7 @@ import mimo.Controller.PluginController.PluginContoller;
 
 public class Controller {
     
-    private PluginContoller mPluginManager;
+    private PluginContoller mPluginController;
     private ScheduledExecutorService mScheduler;
     private MimoFrame mMimoFrame;
 
@@ -26,12 +26,12 @@ public class Controller {
         mMimoFrame = new MimoFrame();
     }
     private void initPlugins() {
-        mPluginManager = new PluginContoller();
+        mPluginController = new PluginContoller();
     }
 
     private void runMimo() {
         Thread schedulerThread = new Thread(() -> {
-            mPluginManager.startPlugins();
+            mPluginController.startPlugins();
             mScheduler = Executors.newScheduledThreadPool(1);
             mScheduler.scheduleAtFixedRate(() -> {
                 handlerunMimo();
@@ -42,6 +42,6 @@ public class Controller {
     }
 
     private void handlerunMimo() {
-        mPluginManager.runPlugins();
+        mPluginController.runPlugins();
     }
 }

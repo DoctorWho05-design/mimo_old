@@ -6,15 +6,13 @@ import frontend.Panels.MainScreen;
 import java.awt.Dimension;
 
 public class MimoFrame extends JFrame{
-    
-    private ImageIcon mIcon = new ImageIcon("/public/Mimo.png");
 
     public MimoFrame() {
         initMimoFrame();
     }
 
     private void initMimoFrame() {
-        this.setIconImage(mIcon.getImage());
+        this.setIconImage(new ImageIcon("/public/Mimo.png").getImage());
         this.setTitle("Mimo");
         this.setSize(new Dimension(1400, 700));
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);

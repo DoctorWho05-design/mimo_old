@@ -1,11 +1,5 @@
 package mimo.Controller.PluginController;
 
-import plugins.Discord.Discord;
-import plugins.GenshinImpact.GenshinImpact;
-import plugins.NexusChronicals.NexusChronicals;
-import plugins.Satisfactory.Satisfactory;
-import plugins.Spotify.Spotify;
-
 public class PluginContoller {
     private PluginMap mPluginMap;
 
@@ -19,11 +13,14 @@ public class PluginContoller {
     }
 
     private void registerPlugins() {
-        mPluginMap.put("Spotify", new Spotify());
-        mPluginMap.put("Satisfactory", new Satisfactory());
-        mPluginMap.put("GenshinImpact", new GenshinImpact());
-        mPluginMap.put("NexusChronicals", new NexusChronicals());
-        mPluginMap.put("Discord", new Discord());
+        PluginMapFactory mPluginMapFactory = new PluginMapFactory();
+        mPluginMap = mPluginMapFactory.createPluginMap()
+            .addSpotify()
+            .addSatisfactory()
+            .addNexusChronicals()
+            .addGenshinImpact()
+            .addDiscord()
+            .build();
     }
 
     public void startPlugins() {

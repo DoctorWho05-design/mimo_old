@@ -2,7 +2,7 @@ package mimo.Controller.WorkspaceController;
 
 import mimo.Controller.PluginController.PluginMap;
 
-public abstract class Workspace {
+public class Workspace {
     private String mWorkspaceName;
     protected PluginMap mPluginMap;
 
