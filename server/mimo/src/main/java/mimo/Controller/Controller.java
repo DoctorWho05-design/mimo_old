@@ -20,16 +20,14 @@ public class Controller {
 
     public Controller() {
         initController();
-        initPlugins();
         runMimo();
     }
 
     private void initController() {
         mMimoFrame = new MimoFrame();
         mMimoFrame.setStartScreen();
-    }
-    private void initPlugins() {
         mPluginController = new PluginContoller();
+        mWorkspaceController = new WorkspaceController();
     }
 
     private void runMimo() {
