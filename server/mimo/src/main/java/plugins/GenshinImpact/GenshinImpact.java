@@ -7,7 +7,7 @@ import mimo.Controller.Plugin.Plugin;
 public class GenshinImpact extends Plugin{
 
     public GenshinImpact() {
-        super("Genshin Impact", true);
+        super("Genshin Impact");
     }
 
     @Override

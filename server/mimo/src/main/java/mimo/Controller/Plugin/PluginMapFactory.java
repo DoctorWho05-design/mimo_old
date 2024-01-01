@@ -48,6 +48,32 @@ public class PluginMapFactory {
     public PluginMap build() {
         return mTempMap;
     }
+
+    public PluginMapFactory addPlugin(String mKey) {
+        switch (mKey) {
+            case "Spotify":
+                this.addSpotify();        
+            break;
+            
+            case "Satisfactory":
+                this.addSatisfactory();
+            break;
+
+            case "Discord":
+                this.addDiscord();
+            break;
+
+            case "GenshinImpact":
+                this.addGenshinImpact();
+            break;
+
+            case "NexusChronicals":
+                this.addNexusChronicals();
+            break;
+        }
+
+        return this;
+    }
  
     /* //!Template
     public PluginMapFactory add() {

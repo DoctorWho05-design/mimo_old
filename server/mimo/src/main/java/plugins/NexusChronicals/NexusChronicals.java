@@ -7,7 +7,7 @@ import mimo.Controller.Plugin.Plugin;
 public class NexusChronicals extends Plugin{
 
     public NexusChronicals() {
-        super("NexusChronicals", false);
+        super("NexusChronicals");
     }
 
     @Override

@@ -8,7 +8,7 @@ public class Satisfactory extends Plugin{
 
     
     public Satisfactory() {
-        super("Satisfactory", false);
+        super("Satisfactory");
     }
 
     @Override

@@ -8,7 +8,7 @@ public class Spotify extends Plugin{
     private SpotifyGenerateAccessCode mSpotifyGenerateAccessCode;
     
     public Spotify() {
-        super("Spotify", false);
+        super("Spotify");
     }
 
     @Override
@@ -19,7 +19,6 @@ public class Spotify extends Plugin{
 
     @Override
     public void run() {
-        if (!mRunEachIteration) return;
         debbug();
     }
 

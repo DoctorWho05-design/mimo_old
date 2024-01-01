@@ -11,26 +11,39 @@ public abstract class Routine {
     private int mInitialDelay;
     private TimeUnit mTimeUnit;
     private int mPeriod;
+    private String mRoutineName;
+    private Thread mSchedulerThread;
 
 
-    public Routine(int mInitialDelay, TimeUnit mTimeUnit, int mPeriod) {
+    public Routine(String mRoutineName, int mInitialDelay, TimeUnit mTimeUnit, int mPeriod) {
+        this.mRoutineName = mRoutineName;
         this.mInitialDelay = mInitialDelay;
         this.mTimeUnit = mTimeUnit;
         this.mPeriod = mPeriod;
-        startRuotine();
+        initRoutine();
     }
 
-    private void startRuotine() {
-        Thread schedulerThread = new Thread(() -> {
+    private void initRoutine() {
+        mSchedulerThread = new Thread(() -> {
             mScheduler = Executors.newScheduledThreadPool(1);
             mScheduler.scheduleAtFixedRate(() -> {
                 handleRuotine();
             }, mInitialDelay, mPeriod, mTimeUnit);
         });
-        schedulerThread.start();
-        Mimo.DEBUGER.startMethod("thread.start()");
-
     } 
+
+    public void startRoutine() {
+        mSchedulerThread.start();
+        Mimo.DEBUGER.startMethod("thread.start()");
+    }
+
+    public void stopRoutine() {
+        mSchedulerThread.stop();
+    }
     
+    public String getRoutineName() {
+        return mRoutineName;
+    }
+
     public abstract void handleRuotine();
 }

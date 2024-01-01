@@ -4,16 +4,15 @@ import mimo.Controller.Data;
 
 public abstract class Plugin {
     private String mPluginName;
-    protected boolean mRunEachIteration;
+    
     protected PluginMap mPluginMap;
 
-    public Plugin(String mPluginName, boolean mRunEachIteration) {
-        initPlugin(mPluginName, mRunEachIteration);
+    public Plugin(String mPluginName) {
+        initPlugin(mPluginName);
     }
 
-    private void initPlugin(String mPluginName, boolean mRunEachIteration) {
+    private void initPlugin(String mPluginName) {
         this.mPluginName = mPluginName;
-        this.mRunEachIteration = mRunEachIteration;
     }
     
     public abstract void start();

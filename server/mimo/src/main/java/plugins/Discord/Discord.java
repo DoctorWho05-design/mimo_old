@@ -7,7 +7,7 @@ import mimo.Controller.Plugin.Plugin;
 public class Discord extends Plugin{
 
     public Discord() {
-        super("Discord", true);
+        super("Discord");
     }
 
     @Override
