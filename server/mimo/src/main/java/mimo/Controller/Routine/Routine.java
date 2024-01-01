@@ -1,4 +1,4 @@
-package mimo.Controller.Ruotine;
+package mimo.Controller.Routine;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -6,14 +6,14 @@ import java.util.concurrent.TimeUnit;
 
 import mimo.Mimo;
 
-public abstract class Ruotine {
+public abstract class Routine {
     protected ScheduledExecutorService mScheduler;
     private int mInitialDelay;
     private TimeUnit mTimeUnit;
     private int mPeriod;
 
 
-    public Ruotine(int mInitialDelay, TimeUnit mTimeUnit, int mPeriod) {
+    public Routine(int mInitialDelay, TimeUnit mTimeUnit, int mPeriod) {
         this.mInitialDelay = mInitialDelay;
         this.mTimeUnit = mTimeUnit;
         this.mPeriod = mPeriod;
