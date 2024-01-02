@@ -13,8 +13,7 @@ public class PluginContoller {
     }
 
     private void registerPlugins() {
-        PluginMapFactory mPluginMapFactory = new PluginMapFactory();
-        mPluginMap = mPluginMapFactory.createPluginMap()
+        mPluginMap = new PluginMapFactory()
             .addSpotify()
             .addSatisfactory()
             .addNexusChronicals()

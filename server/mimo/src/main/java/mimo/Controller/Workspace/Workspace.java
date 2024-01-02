@@ -19,8 +19,7 @@ public class Workspace {
     public String getName() {return mWorkspaceName;}
 
     public void addPlugin(String mKey) {
-        PluginMapFactory mFactory = new PluginMapFactory();
-        mPluginMap = mFactory.editPluginMap(mPluginMap).addPlugin(mKey).build();
+        mPluginMap = new PluginMapFactory().editPluginMap(mPluginMap).addPlugin(mKey).build();
     }
     
 }

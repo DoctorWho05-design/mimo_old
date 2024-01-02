@@ -10,9 +10,8 @@ public class PluginMapFactory {
 
     private PluginMap mTempMap;
 
-    public PluginMapFactory createPluginMap() {
+    public PluginMapFactory() {
         mTempMap = new PluginMap();
-        return this;
     }
 
     public PluginMapFactory editPluginMap(PluginMap mPluginMap) {
